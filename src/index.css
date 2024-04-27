@@ -1,12 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: "Font";
-  src: local("Font"),
-    url("./Fonts/font.otf") format("opentype");
-  font-weight: normal;
-}
+
 *{
   margin: 0;
   padding: 0;
