@@ -7,7 +7,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <div className=" bg-center h-screen bg-[url('Moon.png')] m-0 pt-10">
       <App />
     </div>
-    
   </React.StrictMode>,
 )
- 
