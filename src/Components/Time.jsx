@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { UilTemperatureMinus , UilTear, UilWind, UilSun, UilSunset,  UilArrowUp,UilArrowDown} from '@iconscout/react-unicons'
 import { formatToLocalTime, iconUrlFromCode } from '../Services/info'
-function Time({weather: {dt, timezone, name, country, details, icon, temp_min, temp_max, sunrise, sunset, humidity, feels_like, speed }}) {
-
-  
+function Time({ weather: { dt, timezone, name, country, details, icon, temp, temp_min, temp_max, sunrise, sunset, speed, humidity, feels_like} }) {
   return (
     <div>
+
       <div className="flex items-center justify-center my-4 text-white">
         {formatToLocalTime(dt, timezone)}
       </div>
@@ -20,15 +19,15 @@ function Time({weather: {dt, timezone, name, country, details, icon, temp_min, t
         <div>
           <div className="flex items pb-2">
             <UilTemperatureMinus/>
-            <p className='pl-3'>Real fell: {`${feels_like.toFixed()}°`}</p>
+            <p className='pl-3'>{`Real fell: ${feels_like.toFixed()}°`}</p>
           </div>
           <div className="flex items pb-2">
             <UilTear/>
-            <p className='pl-3'>Humidity: {`${humidity.toFixed()}%`}</p>
+            <p className='pl-3'>{`Humidity: ${humidity.toFixed()}%`}</p>
           </div>
           <div className="flex items">
             <UilWind/>
-            <p className='pl-3'>Wind: {`${speed.toFixed()} km/h`}</p>
+            <p className='pl-3'>{`Wind: ${speed.toFixed()} km/h`}</p>
           </div>
         </div>
       </div>
@@ -36,12 +35,12 @@ function Time({weather: {dt, timezone, name, country, details, icon, temp_min, t
       <div className="flex items-center justify-center my-6 text-white text-lg">
         <div className="flex mr-2">
           <UilSun/> 
-          <p className='pl-2'>Rise: {formatToLocalTime(sunrise, timezone, 'hh:mm a')}</p> 
+          <p className='pl-2'>Rise: {formatToLocalTime(sunrise, timezone, "hh:mm a")} </p> 
         </div>
         <p className='px-3'>|</p>
         <div className="flex mr-2">
           <UilSunset/> 
-          <p className='pl-2'>Set: {formatToLocalTime(sunset, timezone, 'hh:mm a')}</p>
+          <p className='pl-2'>Set: {formatToLocalTime(sunset, timezone, "hh:mm a")}</p>
         </div>
         <p className='px-3'>|</p>
         <div className="flex mr-2">
